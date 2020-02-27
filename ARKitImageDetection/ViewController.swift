@@ -13,6 +13,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     
     @IBOutlet weak var blurView: UIVisualEffectView!
     
+    var plane: SCNPlane?
+    
     /// The view controller that displays the status and "restart experience" UI.
     lazy var statusViewController: StatusViewController = {
         return childViewControllers.lazy.compactMap({ $0 as? StatusViewController }).first!
@@ -94,15 +96,15 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             
             // Create a plane to visualize the initial position of the detected image.
             
-            let plane = SCNPlane(width: referenceImage.physicalSize.width,
+            self.plane = SCNPlane(width: referenceImage.physicalSize.width,
                                  height: referenceImage.physicalSize.height)
 //            let plane = SCNPlane(width: 0.05,
 //                                 height: 0.09)
 //
-            plane.firstMaterial?.diffuse.contents = UIImage(named: "orangeFilter.png")
+            self.plane?.firstMaterial?.diffuse.contents = UIImage(named: "orangeFilter.png")
             
         
-            let planeNode = SCNNode(geometry: plane)
+            let planeNode = SCNNode(geometry: self.plane)
             planeNode.opacity = 0.9
             
            //stuff
@@ -140,4 +142,11 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             .removeFromParentNode()
         ])
     }
+    
+    @IBAction func buttonClicked(_ sender: Any)
+    {
+        self.plane?.firstMaterial?.diffuse.contents = UIImage(named: "blueFilter.png")
+        print("it happened")
+    }
+    
 }
