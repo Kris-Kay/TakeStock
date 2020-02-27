@@ -105,7 +105,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             let planeNode = SCNNode(geometry: plane)
             planeNode.opacity = 0.9
             
-           
+           //stuff
             /*
              `SCNPlane` is vertically oriented in its local coordinate space, but
              `ARImageAnchor` assumes the image is horizontal in its local space, so
