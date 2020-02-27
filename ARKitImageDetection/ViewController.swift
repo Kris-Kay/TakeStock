@@ -1,6 +1,4 @@
 /*
-See LICENSE folder for this sample’s licensing information.
-
 Abstract:
 Main view controller for the AR experience.
 */
@@ -75,12 +73,15 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         let configuration = ARWorldTrackingConfiguration()
         configuration.detectionImages = referenceImages
         session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
+        
+        //Find max number of images that can be tracked simultaneously
         if #available(iOS 12.0, *) {
-            configuration.maximumNumberOfTrackedImages = 6
+            configuration.maximumNumberOfTrackedImages = 9
             print(configuration.maximumNumberOfTrackedImages)
         } else {
             // Fallback on earlier versions
         }
+        
         statusViewController.scheduleMessage("Look around to detect images", inSeconds: 7.5, messageType: .contentPlacement)
 	}
 
@@ -92,17 +93,18 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         updateQueue.async {
             
             // Create a plane to visualize the initial position of the detected image.
-//            let plane = SCNPlane(width: referenceImage.physicalSize.width,
-//                                 height: referenceImage.physicalSize.height)
-            let plane = SCNPlane(width: 0.05,
-                                 height: 0.09)
-            plane.firstMaterial?.diffuse.contents = UIColor.cyan
             
+            let plane = SCNPlane(width: referenceImage.physicalSize.width,
+                                 height: referenceImage.physicalSize.height)
+//            let plane = SCNPlane(width: 0.05,
+//                                 height: 0.09)
+//
+            plane.firstMaterial?.diffuse.contents = UIImage(named: "orangeFilter.png")
+            
+        
             let planeNode = SCNNode(geometry: plane)
             planeNode.opacity = 0.9
             
-            //bullshit I added
-            plane.cornerRadius = 0.005;
            
             /*
              `SCNPlane` is vertically oriented in its local coordinate space, but
