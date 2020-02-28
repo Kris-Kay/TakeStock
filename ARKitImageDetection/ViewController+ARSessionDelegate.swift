@@ -39,7 +39,7 @@ extension ViewController: ARSessionDelegate {
     }
     
     func sessionWasInterrupted(_ session: ARSession) {
-        blurView.isHidden = false
+//        blurView.isHidden = false
         statusViewController.showMessage("""
         SESSION INTERRUPTED
         The session will be reset after the interruption has ended.
@@ -47,7 +47,7 @@ extension ViewController: ARSessionDelegate {
     }
     
     func sessionInterruptionEnded(_ session: ARSession) {
-        blurView.isHidden = true
+//        blurView.isHidden = true
         statusViewController.showMessage("RESETTING SESSION")
         
         restartExperience()
@@ -61,13 +61,13 @@ extension ViewController: ARSessionDelegate {
     
     func displayErrorMessage(title: String, message: String) {
         // Blur the background.
-        blurView.isHidden = false
+//        blurView.isHidden = false
         
         // Present an alert informing about the error that has occurred.
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let restartAction = UIAlertAction(title: "Restart Session", style: .default) { _ in
             alertController.dismiss(animated: true, completion: nil)
-            self.blurView.isHidden = true
+//            self.blurView.isHidden = true
             self.resetTracking()
         }
         alertController.addAction(restartAction)
