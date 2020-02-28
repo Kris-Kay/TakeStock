@@ -15,6 +15,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     
     var plane: SCNPlane?
     
+    @IBOutlet weak var filterMenu: UIStackView!
     /// The view controller that displays the status and "restart experience" UI.
     lazy var statusViewController: StatusViewController = {
         return childViewControllers.lazy.compactMap({ $0 as? StatusViewController }).first!
@@ -41,6 +42,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         statusViewController.restartExperienceHandler = { [unowned self] in
             self.restartExperience()
         }
+        
+//        self.filterMenu.isHidden = true
     }
 
 	override func viewDidAppear(_ animated: Bool) {
@@ -143,10 +146,24 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         ])
     }
     
-    @IBAction func buttonClicked(_ sender: Any)
-    {
+    @IBAction func orangeFilterClicked(_ sender: Any) {
+        self.plane?.firstMaterial?.diffuse.contents = UIImage(named: "orangeFilter.png")
+        self.filterMenu.isHidden = true
+    }
+    
+    @IBAction func blueFilterClicked(_ sender: Any) {
         self.plane?.firstMaterial?.diffuse.contents = UIImage(named: "blueFilter.png")
-        print("it happened")
+        self.filterMenu.isHidden = true
+    }
+    
+    @IBAction func greenFilterClicked(_ sender: Any) {
+        self.plane?.firstMaterial?.diffuse.contents = UIImage(named: "greenFilter.png")
+        self.filterMenu.isHidden = true
+    }
+    
+    @IBAction func menuToggle(_ sender: Any)
+    {
+        self.filterMenu.isHidden = !self.filterMenu.isHidden
     }
     
 }
