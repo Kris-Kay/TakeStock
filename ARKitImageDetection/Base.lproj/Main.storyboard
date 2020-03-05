@@ -11,7 +11,7 @@
         <!--Status View Controller-->
         <scene sceneID="5Tw-8P-01p">
             <objects>
-                <viewController id="ri3-7p-e6d" customClass="StatusViewController" customModule="ARKitImageDetection" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ri3-7p-e6d" customClass="StatusViewController" customModule="Grocery_Filter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RAa-Gm-0Pa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="85"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -103,7 +103,7 @@
         <!--View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="ViewController" customModule="ARKitImageDetection" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BV1-FR-VrT" customClass="ViewController" customModule="Grocery_Filter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RLh-bf-1c3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -111,20 +111,6 @@
                             <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" wantsMultisampling="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E6c-py-dvH" customClass="ARSCNView">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </sceneKitView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iS0-Sc-R4H">
-                                <rect key="frame" x="344" y="792" width="50" height="50"/>
-                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="35c-qC-dEQ"/>
-                                    <constraint firstAttribute="height" constant="50" id="Vb1-Ua-7JY"/>
-                                </constraints>
-                                <state key="normal" image="ellipsis" catalog="system">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="menuToggle:" destination="BV1-FR-VrT" eventType="touchUpInside" id="ZRq-oc-XRw"/>
-                                </connections>
-                            </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tnx-rc-95S">
                                 <rect key="frame" x="0.0" y="44" width="414" height="85"/>
                                 <constraints>
@@ -134,50 +120,56 @@
                                     <segue destination="ri3-7p-e6d" kind="embed" id="uiU-1f-e8S"/>
                                 </connections>
                             </containerView>
-                            <stackView opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="qej-tu-atk" userLabel="filterMenu">
-                                <rect key="frame" x="334" y="682" width="60" height="90"/>
+                            <stackView opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="qej-tu-atk" userLabel="filterMenu">
+                                <rect key="frame" x="53" y="791" width="305" height="75"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdO-S2-iQr" userLabel="Green">
-                                        <rect key="frame" x="0.0" y="0.0" width="60" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Green"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="75" id="gGA-Jc-ow0"/>
+                                            <constraint firstAttribute="height" constant="75" id="gzj-Cb-nBP"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="green-button"/>
                                         <connections>
                                             <action selector="greenFilterClicked:" destination="BV1-FR-VrT" eventType="touchUpInside" id="8Rn-Fa-EkZ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8uP-WC-ULX" userLabel="Blue">
-                                        <rect key="frame" x="0.0" y="30" width="60" height="30"/>
+                                        <rect key="frame" x="115" y="0.0" width="75" height="75"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Blue"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="75" id="MKm-B4-s9P"/>
+                                            <constraint firstAttribute="height" constant="75" id="Pnf-tR-akV"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="blue-button"/>
                                         <connections>
                                             <action selector="blueFilterClicked:" destination="BV1-FR-VrT" eventType="touchUpInside" id="54f-xa-gXS"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8yR-yr-bwg" userLabel="Orange">
-                                        <rect key="frame" x="0.0" y="60" width="60" height="30"/>
+                                        <rect key="frame" x="230" y="0.0" width="75" height="75"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Orange"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="75" id="BpB-iR-02L"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="orange-button"/>
                                         <connections>
                                             <action selector="orangeFilterClicked:" destination="BV1-FR-VrT" eventType="touchUpInside" id="bKl-LG-VlL"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="NtN-8g-5mU"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="GBj-4O-Whc" firstAttribute="bottom" secondItem="iS0-Sc-R4H" secondAttribute="bottom" constant="20" id="6Ka-lR-qSG"/>
+                            <constraint firstItem="qej-tu-atk" firstAttribute="leading" secondItem="GBj-4O-Whc" secondAttribute="leading" constant="52.89952153110039" id="2Nr-rb-ur9"/>
                             <constraint firstItem="tnx-rc-95S" firstAttribute="top" secondItem="GBj-4O-Whc" secondAttribute="top" id="Sdx-fT-fqG"/>
-                            <constraint firstItem="qej-tu-atk" firstAttribute="trailing" secondItem="iS0-Sc-R4H" secondAttribute="trailing" id="anZ-wL-bj5"/>
                             <constraint firstItem="E6c-py-dvH" firstAttribute="top" secondItem="RLh-bf-1c3" secondAttribute="top" id="boO-ZZ-neH"/>
                             <constraint firstItem="GBj-4O-Whc" firstAttribute="trailing" secondItem="E6c-py-dvH" secondAttribute="trailing" id="brT-qF-Rdk"/>
                             <constraint firstItem="tnx-rc-95S" firstAttribute="leading" secondItem="GBj-4O-Whc" secondAttribute="leading" id="cGf-LE-hzb"/>
-                            <constraint firstItem="GBj-4O-Whc" firstAttribute="trailing" secondItem="iS0-Sc-R4H" secondAttribute="trailing" constant="20" id="d3h-Dg-zwb"/>
-                            <constraint firstItem="iS0-Sc-R4H" firstAttribute="top" secondItem="qej-tu-atk" secondAttribute="bottom" constant="20" id="jVv-uJ-FIK"/>
+                            <constraint firstAttribute="bottom" secondItem="qej-tu-atk" secondAttribute="bottom" constant="30" id="jPa-ey-DUl"/>
                             <constraint firstAttribute="bottom" secondItem="E6c-py-dvH" secondAttribute="bottom" id="kLb-BI-xJ4"/>
                             <constraint firstItem="E6c-py-dvH" firstAttribute="leading" secondItem="GBj-4O-Whc" secondAttribute="leading" id="wEL-Op-yTe"/>
                             <constraint firstItem="GBj-4O-Whc" firstAttribute="trailing" secondItem="tnx-rc-95S" secondAttribute="trailing" id="yUU-ir-Rk1"/>
@@ -195,7 +187,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ellipsis" catalog="system" width="64" height="18"/>
+        <image name="blue-button" width="364" height="363"/>
+        <image name="green-button" width="364" height="363"/>
+        <image name="orange-button" width="364" height="363"/>
         <image name="restart" width="20" height="20"/>
         <image name="restartPressed" width="20" height="20"/>
     </resources>
