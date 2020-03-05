@@ -125,7 +125,6 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdO-S2-iQr" userLabel="Green">
                                         <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="75" id="gGA-Jc-ow0"/>
                                             <constraint firstAttribute="height" constant="75" id="gzj-Cb-nBP"/>
@@ -137,7 +136,6 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8uP-WC-ULX" userLabel="Blue">
                                         <rect key="frame" x="115" y="0.0" width="75" height="75"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="75" id="MKm-B4-s9P"/>
                                             <constraint firstAttribute="height" constant="75" id="Pnf-tR-akV"/>
@@ -149,7 +147,6 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8yR-yr-bwg" userLabel="Orange">
                                         <rect key="frame" x="230" y="0.0" width="75" height="75"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="75" id="BpB-iR-02L"/>
                                         </constraints>
