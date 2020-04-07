@@ -330,7 +330,7 @@
 				DEVELOPMENT_TEAM = 5UZ2VG7ZX9;
 				INFOPLIST_FILE = "$(SRCROOT)/ARKitImageDetection/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.kris-kay.GroceryFilter";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kris-kay";
 				PRODUCT_NAME = "Grocery Filter";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
@@ -350,7 +350,7 @@
 				DEVELOPMENT_TEAM = 5UZ2VG7ZX9;
 				INFOPLIST_FILE = "$(SRCROOT)/ARKitImageDetection/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.kris-kay.GroceryFilter";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kris-kay";
 				PRODUCT_NAME = "Grocery Filter";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
