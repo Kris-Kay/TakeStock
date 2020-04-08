@@ -52,6 +52,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
 
         // Start the AR experience
         resetTracking()
+        
+        recyclableClicked(self)
 	}
 	
 	override func viewWillDisappear(_ animated: Bool) {
@@ -144,29 +146,64 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         ])
     }
     
+    
+    @IBOutlet weak var labelBG: UIVisualEffectView!
+    
+    @IBOutlet weak var filternameLabel: UILabel!
+    
+    private var messageHideTimer: Timer?
+    
+    func setFilterNameLabel (label:String){
+        filternameLabel.text = label
+        setFilterNameHidden(false, animated: true)
+        messageHideTimer?.invalidate()
+        let displayDuration: TimeInterval = 3
+        let autoHide = true
+        if autoHide {
+               messageHideTimer = Timer.scheduledTimer(withTimeInterval: displayDuration, repeats: false, block: { [weak self] _ in
+                   self?.setFilterNameHidden(true, animated: true)
+               })
+           }
+    }
+    
+        
+    private func setFilterNameHidden(_ hide: Bool, animated: Bool) {
+        // The panel starts out hidden, so show it before animating opacity.
+            labelBG.isHidden = false
+        
+        guard animated else {
+            labelBG.alpha = hide ? 0 : 1
+            return
+        }
 
-    
-    
+        UIView.animate(withDuration: 0.2, delay: 0, options: [.beginFromCurrentState], animations: {
+            self.labelBG.alpha = hide ? 0 : 1
+        }, completion: nil)
+    }
     
     @IBAction func fairtradeClicked(_ sender: Any) {
         self.plane?.firstMaterial?.diffuse.contents = UIImage(named: "fairtrade.png")
-        self.statusViewController.showMessage("Fairtrade")
+        setFilterNameLabel(label: "Fairtrade")
     }
     
     @IBAction func nonGmoClicked(_ sender: Any) {
         self.plane?.firstMaterial?.diffuse.contents = UIImage(named: "nonGMO.png")
+         setFilterNameLabel(label: "non-GMO")
     }
     
     @IBAction func recyclableClicked(_ sender: Any) {
         self.plane?.firstMaterial?.diffuse.contents = UIImage(named: "recyclable.png")
+         setFilterNameLabel(label: "Recyclable")
     }
     
     @IBAction func organicClicked(_ sender: Any) {
         self.plane?.firstMaterial?.diffuse.contents = UIImage(named: "organic.png")
+        setFilterNameLabel(label: "Organic")
     }
     
     @IBAction func rainforestClicked(_ sender: Any) {
         self.plane?.firstMaterial?.diffuse.contents = UIImage(named: "rainforest-alliance.png")
+        setFilterNameLabel(label: "Rainforest Alliance")
     }
     
     

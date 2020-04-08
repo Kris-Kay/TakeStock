@@ -112,12 +112,34 @@
                             <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" wantsMultisampling="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E6c-py-dvH" customClass="ARSCNView">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </sceneKitView>
-                            <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KSJ-Cg-RNK" userLabel="filter name display">
-                                <rect key="frame" x="0.0" y="383" width="414" height="60"/>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l5E-LL-OuT">
+                                <rect key="frame" x="107" y="410.5" width="200" height="60"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="thV-Vx-DeT">
+                                    <rect key="frame" x="0.0" y="0.0" width="200" height="60"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recyclable" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cVn-Zw-G3k">
+                                            <rect key="frame" x="52.5" y="15" width="95" height="30"/>
+                                            <color key="tintColor" red="0.0" green="0.3216492534" blue="0.3582437336" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="YXT-cc-S6q"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <color key="textColor" red="0.0" green="0.3216492534" blue="0.3582437336" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="cVn-Zw-G3k" firstAttribute="centerX" secondItem="thV-Vx-DeT" secondAttribute="centerX" id="ENF-MZ-tyg"/>
+                                        <constraint firstItem="cVn-Zw-G3k" firstAttribute="centerY" secondItem="thV-Vx-DeT" secondAttribute="centerY" id="Jjq-dS-MYH"/>
+                                    </constraints>
+                                </view>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="JYB-UQ-Lxs"/>
+                                    <constraint firstAttribute="height" constant="60" id="D7J-A7-5Kh"/>
+                                    <constraint firstAttribute="width" constant="200" id="eyY-Ya-pV3"/>
                                 </constraints>
-                            </containerView>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
                             <stackView opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" distribution="equalCentering" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="qej-tu-atk" userLabel="filterMenu">
                                 <rect key="frame" x="30" y="816" width="354" height="50"/>
                                 <subviews>
@@ -197,6 +219,7 @@
                         <constraints>
                             <constraint firstItem="qej-tu-atk" firstAttribute="leading" secondItem="GBj-4O-Whc" secondAttribute="leading" constant="30" id="2Nr-rb-ur9"/>
                             <constraint firstItem="GBj-4O-Whc" firstAttribute="trailing" secondItem="qej-tu-atk" secondAttribute="trailing" constant="30" id="4FS-mO-6PG"/>
+                            <constraint firstItem="l5E-LL-OuT" firstAttribute="centerX" secondItem="RLh-bf-1c3" secondAttribute="centerX" id="ZYL-jG-PXa"/>
                             <constraint firstItem="E6c-py-dvH" firstAttribute="top" secondItem="RLh-bf-1c3" secondAttribute="top" id="boO-ZZ-neH"/>
                             <constraint firstItem="GBj-4O-Whc" firstAttribute="trailing" secondItem="E6c-py-dvH" secondAttribute="trailing" id="brT-qF-Rdk"/>
                             <constraint firstItem="tnx-rc-95S" firstAttribute="leading" secondItem="GBj-4O-Whc" secondAttribute="leading" id="cGf-LE-hzb"/>
@@ -204,6 +227,7 @@
                             <constraint firstAttribute="bottom" secondItem="qej-tu-atk" secondAttribute="bottom" constant="30" id="jPa-ey-DUl"/>
                             <constraint firstItem="L13-6d-2e7" firstAttribute="top" secondItem="GBj-4O-Whc" secondAttribute="top" id="jir-WN-3ho"/>
                             <constraint firstAttribute="bottom" secondItem="E6c-py-dvH" secondAttribute="bottom" id="kLb-BI-xJ4"/>
+                            <constraint firstItem="l5E-LL-OuT" firstAttribute="centerY" secondItem="RLh-bf-1c3" secondAttribute="centerY" constant="-7.5" id="tkh-M6-GEo"/>
                             <constraint firstItem="L13-6d-2e7" firstAttribute="leading" secondItem="GBj-4O-Whc" secondAttribute="leading" constant="30" id="uzM-BZ-b1E"/>
                             <constraint firstItem="E6c-py-dvH" firstAttribute="leading" secondItem="GBj-4O-Whc" secondAttribute="leading" id="wEL-Op-yTe"/>
                             <constraint firstItem="GBj-4O-Whc" firstAttribute="trailing" secondItem="tnx-rc-95S" secondAttribute="trailing" id="yUU-ir-Rk1"/>
@@ -212,6 +236,8 @@
                     </view>
                     <connections>
                         <outlet property="filterMenu" destination="qej-tu-atk" id="fjg-Cu-fcg"/>
+                        <outlet property="filternameLabel" destination="cVn-Zw-G3k" id="W1a-cV-E0B"/>
+                        <outlet property="labelBG" destination="l5E-LL-OuT" id="kbu-O3-Iww"/>
                         <outlet property="sceneView" destination="E6c-py-dvH" id="Gr4-Uw-Z4A"/>
                     </connections>
                 </viewController>
