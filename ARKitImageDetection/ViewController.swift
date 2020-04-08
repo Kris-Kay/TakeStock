@@ -104,11 +104,11 @@ class ViewController: UIViewController, ARSCNViewDelegate {
 //            let plane = SCNPlane(width: 0.05,
 //                                 height: 0.09)
 //
-            self.plane?.firstMaterial?.diffuse.contents = UIImage(named: "orangeFilter.png")
+            self.plane?.firstMaterial?.diffuse.contents = UIImage(named: "recy-filter.png")
             
         
             let planeNode = SCNNode(geometry: self.plane)
-            planeNode.opacity = 0.9
+            planeNode.opacity = 0.98
             
            //stuff
             /*
@@ -146,22 +146,33 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         ])
     }
     
-    @IBAction func orangeFilterClicked(_ sender: Any) {
-        self.plane?.firstMaterial?.diffuse.contents = UIImage(named: "orangeFilter.png")
-//        self.filterMenu.isHidden = true
+    @IBAction func fairtradeClicked(_ sender: Any) {
+        self.plane?.firstMaterial?.diffuse.contents = UIImage(named: "fairtrade-filter.png")
+        self.statusViewController.showMessage("Fairtrade")
     }
     
-    @IBAction func blueFilterClicked(_ sender: Any) {
-        self.plane?.firstMaterial?.diffuse.contents = UIImage(named: "blueFilter.png")
-//        self.filterMenu.isHidden = true
+    @IBAction func nonGmoClicked(_ sender: Any) {
+        self.plane?.firstMaterial?.diffuse.contents = UIImage(named: "nonGMO-filter.png")
     }
     
-    @IBAction func greenFilterClicked(_ sender: Any) {
-        self.plane?.firstMaterial?.diffuse.contents = UIImage(named: "greenFilter.png")
-//        self.filterMenu.isHidden = true
+    @IBAction func recyclableClicked(_ sender: Any) {
+        self.plane?.firstMaterial?.diffuse.contents = UIImage(named: "recy-filter.png")
     }
     
-//    @IBAction func menuToggle(_ sender: Any)
+    @IBAction func organicClicked(_ sender: Any) {
+        self.plane?.firstMaterial?.diffuse.contents = UIImage(named: "organic-filter.png")
+    }
+    
+    @IBAction func rainforestClicked(_ sender: Any) {
+        self.plane?.firstMaterial?.diffuse.contents = UIImage(named: "rainforest-filter.png")
+    }
+    
+    
+    
+
+    
+    
+    //    @IBAction func menuToggle(_ sender: Any)
 //    {
 //        self.filterMenu.isHidden = !self.filterMenu.isHidden
 //    }

@@ -1,11 +1,14 @@
 {
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
+    "author" : "xcode",
+    "version" : 1
   },
   "resources" : [
     {
       "filename" : "9-things-shelf.arreferenceimage"
+    },
+    {
+      "filename" : "cupboard-ref-size.arreferenceimage"
     }
   ]
 }
