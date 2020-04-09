@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -11,10 +12,6 @@
         <scene sceneID="EHf-IW-A2E">
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
-                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -38,11 +35,12 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Euu-9s-eve" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="UUw-cE-ieH"/>
+                            <constraint firstItem="Euu-9s-eve" firstAttribute="centerX" secondItem="QXP-QP-x0E" secondAttribute="centerX" id="UUw-cE-ieH"/>
                             <constraint firstItem="ebi-dr-iIa" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Y82-dr-bTb"/>
                             <constraint firstItem="Euu-9s-eve" firstAttribute="top" secondItem="ebi-dr-iIa" secondAttribute="bottom" constant="-30" id="xaT-vI-pXd"/>
-                            <constraint firstItem="ebi-dr-iIa" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="xhe-T4-6ir"/>
+                            <constraint firstItem="ebi-dr-iIa" firstAttribute="centerX" secondItem="QXP-QP-x0E" secondAttribute="centerX" id="xhe-T4-6ir"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="QXP-QP-x0E"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -51,7 +49,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="TakeStock-Logo-btn-1" width="2089" height="2089"/>
-        <image name="TakeStock-logo-text-only" width="2047" height="315"/>
+        <image name="TakeStock-Logo-btn-1" width="1080" height="1080"/>
+        <image name="TakeStock-logo-text-only" width="1080" height="166"/>
     </resources>
 </document>
