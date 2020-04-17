@@ -1,0 +1,16 @@
+{
+  "images" : [
+    {
+      "filename" : "cupboard-screen-size.jpg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "unit" : "inches",
+    "width" : 7.1295336787564763
+  }
+}
