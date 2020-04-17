@@ -1,7 +1,13 @@
 ## TakeStock 
 
-An AR app that helps with real life visual search. 
+An AR app that  real life visual search. 
 
 Because reading every ingredient on every box or trying to see through green washing while picking out a tea is a real pain.
+
+Video demo of TakeStock iOS app prototype 
+https://youtu.be/_j8ZBiCQLW8
+
+Screen recording of the app in use taken at the same time as the demo above. 
+https://youtu.be/cIOGlobsssw
 
 
