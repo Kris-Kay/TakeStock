@@ -10,4 +10,4 @@ https://youtu.be/_j8ZBiCQLW8
 Screen recording of the app in use taken at the same time as the demo above. 
 https://youtu.be/cIOGlobsssw
 
-App idea, design, and UX/UI we done in colaboration with Thea Berringer &  Kat Feldman.
+App conceptualization and UX/UI design were done with Thea Berringer &  Kat Feldman.
