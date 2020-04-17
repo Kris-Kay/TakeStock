@@ -1,4 +1,4 @@
-TakeStock 
+## TakeStock 
 
 An AR app that helps with real life visual search. 
 
