@@ -1,6 +1,6 @@
 ## TakeStock 
 
-An AR app that prototypes the next step in real life visual search filtering.
+### An AR app that prototypes the next step in real life visual search filtering.
 
 Because reading every ingredient on every box or trying to see through green washing while picking out a tea is a real pain.
  
